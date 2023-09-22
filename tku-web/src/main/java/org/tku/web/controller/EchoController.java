@@ -2,6 +2,7 @@ package org.tku.web.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@Log4j2
 public class EchoController {
 
     @GetMapping("/echo")
@@ -35,6 +37,8 @@ public class EchoController {
     public String pretty2(@RequestBody String json) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         Object object = objectMapper.readValue(json, Object.class);
-        return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
+        String msg = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
+        log.debug("msg = " + msg);
+        return msg;
     }
 }
