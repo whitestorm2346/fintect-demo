@@ -1,4 +1,4 @@
-<html layout:decorate="~{common/layout}" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="utf-8">
     <title>Title</title>
@@ -7,6 +7,6 @@
 </head>
 <body>
     <th:block th:include="common/nav :: nav"></th:block>
-    <h1 th:text="#{common.title}">Index</h1>
+    <th:block layout:fragment="content"></th:block>
 </body>
 </html>
