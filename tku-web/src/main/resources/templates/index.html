@@ -1,8 +1,21 @@
+<<<<<<< HEAD
 <html layout:decorate="~{common/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" >
 <body>
     <div layout:fragment="content">
         <h1 th:text="#{common.title}">Index</h1>
     </div>
+=======
+<html layout:decorate="~{common/layout}" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <th:block th:include="common/nav :: nav"></th:block>
+    <h1 th:text="#{common.title}">Index</h1>
+>>>>>>> 160555354690aba076bc88dbc4004f3e95840c44
 </body>
 </html>
