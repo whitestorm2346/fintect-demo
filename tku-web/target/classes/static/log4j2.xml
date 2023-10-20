@@ -1,14 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Configuration monitorinterval="1800" status="INFO">
-    <Properties> </Properties>
+    <Properties>
+    </Properties>
+
     <Appenders>
         <Console name="console" target="SYSTEM_OUT">
-            <!--  <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t]
-                            %C{1}.%M(%F:%L) – %m%n" />  -->
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{[%-5level]} xxx [%t] %cyan{%C{1}.%M(%F:%L)} – %m%n"/>
+            <!-- <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t]
+                %C{1}.%M(%F:%L) – %m%n" /> -->
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{[%-5level]} [%t] %cyan{%C{1}.%M(%F:%L)} – %m%n"/>
         </Console>
     </Appenders>
+
     <Loggers>
-        <logger name="Validator" level="ERROR" additivity="true"/>
+        <logger name="Validator" level="ERROR" additivity="true" />
         <logger name="org.hibernate" level="ERROR" additivity="true"/>
         <logger name="org.springframework" level="ERROR" additivity="true"/>
         <logger name="org.thymeleaf" level="ERROR" additivity="true"/>
@@ -20,10 +25,10 @@
         <logger name="org.owasp.esapi" level="ERROR" additivity="true"/>
         <logger name="org.opensaml" level="ERROR" additivity="true"/>
         <logger name="com.sun" level="ERROR" additivity="true"/>
-        <logger name="com.ulisesbocchio" level="ERROR" additivity="true"/>
-        <logger name="httpclient.wire" level="ERROR" additivity="true"/>
-        <logger name="io.netty" level="ERROR" additivity="true"/>
-        <logger name="net.sf" level="ERROR" additivity="true"/>
+        <logger name="com.ulisesbocchio" level="ERROR" additivity="true" />
+        <logger name="httpclient.wire" level="ERROR" additivity="true" />
+        <logger name="io.netty" level="ERROR" additivity="true" />
+        <logger name="net.sf" level="ERROR" additivity="true" />
         <logger name="springfox" level="ERROR" additivity="true"/>
         <logger name="org.quartz" level="ERROR" additivity="true"/>
         <Root level="debug" additivity="false">
