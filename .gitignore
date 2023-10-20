@@ -26,5 +26,3 @@ replay_pid*
 
 **/*.iml
 target
-
-./src/main/resources/static

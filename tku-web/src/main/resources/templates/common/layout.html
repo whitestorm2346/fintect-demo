@@ -1,28 +1,13 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<<<<<<< HEAD
-  <meta charset="utf-8">
-  <title>Title</title>
-  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-  <script th:src="@{/js/bootstrap.min.js}"></script>
-</head>
-<body>
-
-<th:block th:include="common/nav :: nav"></th:block>
-<div layout:fragment="content"></div>
-<th:block th:include="common/footer :: footer"></th:block>
-
-</body>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+    <head>
+        <meta charset="utf-8">
+        <title>Title</title>
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <script th:src="@{/js/bootstrap.min.js}" ></script>
+    </head>
+    <body>
+        <th:block th:include="common/nav :: nav"></th:block>
+        <div layout:fragment="content"></div>
+        <th:block th:include="common/footer :: footer"></th:block>
+    </body>
 </html>
-=======
-    <meta charset="utf-8">
-    <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-</head>
-<body>
-    <th:block th:include="common/nav :: nav"></th:block>
-    <th:block layout:fragment="content"></th:block>
-</body>
-</html>
->>>>>>> 160555354690aba076bc88dbc4004f3e95840c44
