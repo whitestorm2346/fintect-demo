@@ -22,7 +22,7 @@ public class SignUpController {
 
     @GetMapping(value = "/sign-up")
     public String loginPage() throws JsonProcessingException {
-        return "login";
+        return "sign_up";
     }
 
     @PostMapping(value = "/sign-up")

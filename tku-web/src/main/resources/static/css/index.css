@@ -11,8 +11,9 @@ body {
 .intro {
   margin: 4.5rem auto;
   padding: 2rem 3rem;
-  width: fit-content;
+  width: 50vw;
   height: fit-content;
+  text-wrap: wrap;
 
   background-color: aliceblue;
   opacity: 0.8;
