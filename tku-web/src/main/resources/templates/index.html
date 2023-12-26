@@ -1,8 +1,33 @@
-<html layout:decorate="~{common/layout}"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>Note Share</title>
+  <link rel="stylesheet" th:href="@{/css/nav.css}">
+  <link rel="stylesheet" th:href="@{/css/index.css}">
+  <script th:src="@{/js/bootstrap.min.js}" ></script>
+</head>
 <body>
-    <div layout:fragment="content">
-        <h1 th:text="#{common.title}">Index</h1>
+    <th:block th:include="common/nav :: nav"></th:block>
+
+    <div class="intro">
+      <h1>Notes Share</h1>
+      <h2 th:text="#{index.subtitle}">專為學生族所設計，針對年輕人所打造</h2>
+
+      <p th:text="#{index.p1}">
+        一個能方便放筆記的網站，<br>
+        不只讓你隨時隨地記錄重要資訊，<br>
+        更能參考各位大神一路以來的學習歷程。
+      </p>
+
+      <p th:text="#{index.p2}">
+        這個網站提供簡單的編輯工具，<br>
+        不需要特別的技能，就能快速上手，<br>
+        你可以在不同裝置之間同步筆記，<br>
+        確保你的資訊永遠都在你身邊，<br>
+        除了基本的筆記功能，<br>
+        這個網站也可能提供共享筆記、<br>
+        設定提醒或是進行搜尋整理。
+      </p>
     </div>
 </body>
 </html>

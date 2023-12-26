@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('../images/books.jpg');
+  height: 100vh;
+}
+
+.intro {
+  margin: 4.5rem auto;
+  padding: 2rem 3rem;
+  width: fit-content;
+  height: fit-content;
+
+  background-color: aliceblue;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.intro h1 {
+  font-size: 4rem;
+}
+
+.intro h2 {
+  font-size: 2rem;
+}
+
+.intro p {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}

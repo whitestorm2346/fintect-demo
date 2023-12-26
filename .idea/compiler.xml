@@ -12,6 +12,9 @@
         <module name="tku-api" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="fintect-demo" target="1.5" />
+      <module name="note-share-web" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

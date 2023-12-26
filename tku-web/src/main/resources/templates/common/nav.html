@@ -1,27 +1,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body >
 <th:block th:fragment="nav">
-  <nav class="navbar navbar-expand-lg bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand text-white" href="#">TKU</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" th:href="@{/index}" th:text="#{common.index}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/web/app1}" th:text="#{common.app1}"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" th:href="@{/web/app2}" th:text="#{common.app2}"></a>
-          </li>
-        </ul>
+  <header>
+    <h1 class="web-title">Notes Share</h1>
+
+    <div class="navbar">
+      <ul class="nav-links">
+        <li class="link"><a th:href="@{/index}" th:text="#{common.index}"></a></li>
+        <li class="link"><a th:href="@{/note-share/notes}" th:text="#{common.app1}"></a></li>
+        <li class="link"><a th:href="@{/note-share/exercises}" th:text="#{common.app2}"></a></li>
+      </ul>
+
+      <div class="buttons">
+        <a class="button" th:href="@{/login}" th:text="#{btn.login}"></a>
+        <a class="button" th:href="@{/sign-up}" th:text="#{btn.sign_up}"></a>
       </div>
     </div>
-  </nav>
+  </header>
 </th:block>
 </body>
 </html>
