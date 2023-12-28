@@ -30,7 +30,7 @@
   </div>
   <div class="buttons">
     <button type="submit" class="btn submit" id="submit" th:action="@{/login}">登入</button>
-    <button type="reset" class="btn reset warning" id="reset" th:action="@{/reset}">重置</button>
+    <button type="reset" class="btn reset warning" id="reset" onclick="reset()">重置</button>
   </div>
   <div class="buttons">
     <a th:href="@{/sign-up}" class="btn2">
@@ -44,5 +44,6 @@
   </div>
 </section>
 
+<script th:src="@{/js/login.js}"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ section {
     justify-content: center;
     align-items: center;
 
-    background-color: rgb(225, 245, 255);
+    background-color: #2c3137;
     border-radius: 10px;
 }
 
@@ -29,6 +29,7 @@ section {
 .title {
     font-size: 3rem;
     text-align: center;
+    color: aliceblue;
 }
 
 .container {
@@ -46,8 +47,7 @@ input {
     margin: .5rem auto;
     margin-left: -0.1em;
     padding-left: .3em;
-    border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: 5rem;
 }
 
 input::-ms-clear,
@@ -86,18 +86,17 @@ input::-ms-reveal {
 
 button, .btn {
     padding: .3rem 1rem;
-    color: #000;
+    color: #2c3137;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    background-color: rgb(255, 190, 69);
+    background-color: aliceblue;
     border-radius: 5px;
-    border: 1px solid #000;
 }
 
 button:hover, .btn:hover {
     cursor: pointer;
-    background-color: rgb(255, 204, 109);
+    background-color: rgb(255, 234, 2);
 }
 
 .btn2 {
@@ -105,17 +104,17 @@ button:hover, .btn:hover {
     width: 50px;
     height: 50px;
     text-decoration: none;
-    background-color: rgb(255, 190, 69);
-    box-shadow: 1px 1px .5rem 0 #b1b1b1;
+    background-color: aliceblue;
+    box-shadow: 1px 1px .5rem 0 #aliceblue;
     border-radius: 50%;
     display: grid;
     place-items: center;
     font-size: 1.15rem;
-    color: #000;
+    color: #2c3137;
 }
 
 .btn2:hover {
-    color: #582900;
+    color: rgb(255, 234, 2);
 }
 
 .btn2:hover i {
@@ -145,6 +144,14 @@ button:hover, .btn:hover {
 
 .eyes {
     color: rgb(111, 111, 111);
+}
+
+.warning:hover {
+    background-color: #ff2a2a;
+}
+
+.warning:hover i {
+    color: aliceblue;
 }
 
 .hide {
