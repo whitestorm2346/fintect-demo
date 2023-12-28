@@ -12,7 +12,6 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.tku.web.service.UserDetailsServiceImpl;
 
 import java.util.Collection;
 
@@ -20,7 +19,6 @@ import java.util.Collection;
 @EnableWebSecurity
 @Log4j2
 public class SecurityConfiguration {
-
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
@@ -83,24 +81,8 @@ public class SecurityConfiguration {
 
         return http.build();
     }
-
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public UserDetailsServiceImpl userDetailsService() {
-        UserDetailsServiceImpl userDetailsService = new UserDetailsServiceImpl();
-        userDetailsService.setPasswordEncoder(bCryptPasswordEncoder());
-        return userDetailsService;
-    }
-
-    @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(bCryptPasswordEncoder());
-        daoAuthenticationProvider.setUserDetailsService(userDetailsService());
-        return daoAuthenticationProvider;
     }
 }

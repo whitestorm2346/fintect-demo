@@ -26,7 +26,7 @@ public class UserController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/api/allUser")
+    @GetMapping("/api/v1/allUser")
     public ResponseEntity<?> listUser() {
         return ResponseEntity.ok(userRepository.findAll());
     }
@@ -40,12 +40,11 @@ public class UserController {
         return ResponseEntity.ok(optionalUser.get());
     }
 
-    @PostMapping("/create_account")
+    @PostMapping("/api/v1/create-account")
     public ResponseEntity<?> createUser(
-            @RequestParam String account,
-            @RequestParam String new_password,
-            @RequestParam String check_password,
-            Model model) {
+            String account,
+            String new_password,
+            String check_password) {
         Optional<User> optionalUser = userRepository.findById(account);
         if (optionalUser.isPresent()) { // account existed
             return ResponseEntity.badRequest().build();

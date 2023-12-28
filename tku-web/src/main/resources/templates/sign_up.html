@@ -9,7 +9,7 @@
 <section class="login">
   <h1 class="title">註冊會員</h1>
   <div class="container">
-    <form th:action="@{/create_account}" method="post">
+    <form th:action="@{/create-account}" method="post">
       <div class="blank">
         <label class="label" for="account"></label>
         <input
@@ -45,7 +45,7 @@
         <i class="eyes fa-solid fa-eye-slash hide-pw hide" id="hide-pw-2"></i>
       </div>
       <div class="buttons">
-        <button type="submit" class="btn submit" id="submit" th:action="@{/login}" th:text="#{btn.sign_up}"></button>
+        <button type="submit" class="btn submit" id="submit" th:text="#{btn.sign_up}"></button>
         <button type="reset" class="btn reset warning" id="reset" onclick="reset()" th:text="#{btn.reset}"></button>
       </div>
     </form>
