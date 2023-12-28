@@ -35,8 +35,8 @@ public class LoginController {
     }
 
     @PostMapping(value = "/login")
-    public String login(String userName, String password) {
-        log.debug("userName = {}, password = {}", userName, password);
+    public String login(String account, String password) {
+        log.debug("account = {}, password = {}", account, password);
         return "redirect:/index";
     }
 }

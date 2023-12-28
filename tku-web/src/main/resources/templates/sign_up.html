@@ -9,37 +9,55 @@
 <section class="login">
   <h1 class="title">註冊會員</h1>
   <div class="container">
-    <div class="blank">
-      <input
-          type="text"
-          name="account"
-          id="account"
-          placeholder="Account"
-      />
-    </div>
-    <div class="blank">
-      <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-      />
-      <i class="eyes fa-solid fa-eye show-pw" id="show-pw"></i>
-      <i class="eyes fa-solid fa-eye-slash hide-pw hide" id="hide-pw"></i>
-    </div>
-  </div>
-  <div class="buttons">
-    <button type="submit" class="btn submit" id="submit" th:action="@{/login}">登入</button>
-    <button type="reset" class="btn reset warning" id="reset" onclick="reset()">重置</button>
+    <form>
+      <div class="blank">
+        <label class="label" for="account"></label>
+        <input
+            type="text"
+            name="account"
+            id="account"
+            th:placeholder="#{label.login.account}"
+            required
+        />
+      </div>
+      <div class="blank">
+        <label class="label" for="new-password"></label>
+        <input
+            type="password"
+            name="new password"
+            id="new-password"
+            th:placeholder="#{label.login.new_password}"
+            required
+        />
+        <i class="eyes fa-solid fa-eye show-pw" id="show-pw-1"></i>
+        <i class="eyes fa-solid fa-eye-slash hide-pw hide" id="hide-pw-1"></i>
+      </div>
+      <div class="blank">
+        <label class="label" for="check-password"></label>
+        <input
+            type="password"
+            name="check password"
+            id="check-password"
+            th:placeholder="#{label.login.check_password}"
+            required
+        />
+        <i class="eyes fa-solid fa-eye show-pw" id="show-pw-2"></i>
+        <i class="eyes fa-solid fa-eye-slash hide-pw hide" id="hide-pw-2"></i>
+      </div>
+      <div class="buttons">
+        <button type="submit" class="btn submit" id="submit" th:action="@{/login}" th:text="#{btn.sign_up}"></button>
+        <button type="reset" class="btn reset warning" id="reset" onclick="reset()" th:text="#{btn.reset}"></button>
+      </div>
+    </form>
   </div>
   <div class="buttons">
     <a th:href="@{/login}" class="btn2">
       <i class="fa-solid fa-right-to-bracket"></i>
-      <span>Login</span>
+      <span th:text="#{btn.login}"></span>
     </a>
     <a th:href="@{/}" class="btn2">
       <i class="fa-solid fa-house"></i>
-      <span>Home</span>
+      <span th:text="#{common.index}"></span>
     </a>
   </div>
 </section>

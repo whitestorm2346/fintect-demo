@@ -46,7 +46,7 @@ input {
     height: 1.5rem;
     margin: .5rem auto;
     margin-left: -0.1em;
-    padding-left: .3em;
+    padding-left: .5em;
     border-radius: 5rem;
 }
 
@@ -57,7 +57,6 @@ input::-ms-reveal {
 
 .input-color {
     width: 50%;
-    margin: 0;
     background-color: transparent;
     border: none;
 }
@@ -96,7 +95,7 @@ button, .btn {
 
 button:hover, .btn:hover {
     cursor: pointer;
-    background-color: rgb(255, 234, 2);
+    background-color: rgb(255, 186, 90);
 }
 
 .btn2 {
@@ -114,7 +113,7 @@ button:hover, .btn:hover {
 }
 
 .btn2:hover {
-    color: rgb(255, 234, 2);
+    background-color: rgb(255, 186, 90);
 }
 
 .btn2:hover i {
@@ -135,6 +134,7 @@ button:hover, .btn:hover {
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;
     user-select: none;
+    color: rgb(255, 186, 90);
 }
 
 .login>.buttons:nth-of-type(3),
@@ -147,7 +147,7 @@ button:hover, .btn:hover {
 }
 
 .warning:hover {
-    background-color: #ff2a2a;
+    background-color: #ffa6a6;
 }
 
 .warning:hover i {

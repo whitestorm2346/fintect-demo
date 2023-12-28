@@ -9,39 +9,46 @@
 <section class="login">
   <h1 class="title">帳戶登入</h1>
   <div class="container">
-    <div class="blank">
-      <input
-          type="text"
-          name="account"
-          id="account"
-          placeholder="Account"
-      />
-    </div>
-    <div class="blank">
-      <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-      />
-      <i class="eyes fa-solid fa-eye show-pw" id="show-pw"></i>
-      <i class="eyes fa-solid fa-eye-slash hide-pw hide" id="hide-pw"></i>
-    </div>
-  </div>
-  <div class="buttons">
-    <button type="submit" class="btn submit" id="submit" th:action="@{/login}">登入</button>
-    <button type="reset" class="btn reset warning" id="reset" onclick="reset()">重置</button>
+    <form th:action="@{/login}" method="post">
+      <div class="blank">
+        <label class="label" for="account"></label>
+        <input
+            type="text"
+            name="account"
+            id="account"
+            th:placeholder="#{label.login.account}"
+            required
+        />
+      </div>
+      <div class="blank">
+        <label class="label" for="password"></label>
+        <input
+            type="password"
+            name="password"
+            id="password"
+            th:placeholder="#{label.login.password}"
+            required
+        />
+        <i class="eyes fa-solid fa-eye show-pw" id="show-pw"></i>
+        <i class="eyes fa-solid fa-eye-slash hide-pw hide" id="hide-pw"></i>
+      </div>
+      <div class="buttons">
+        <button type="submit" class="btn submit" id="submit" th:text="#{btn.login}"></button>
+        <button type="reset" class="btn reset warning" id="reset" onclick="reset()" th:text="#{btn.reset}"></button>
+      </div>
+    </form>
   </div>
   <div class="buttons">
     <a th:href="@{/sign-up}" class="btn2">
-    <i class="fa-solid fa-user-plus"></i>
-    <span>Sign Up</span>
+      <i class="fa-solid fa-user-plus"></i>
+      <span th:text="#{btn.sign_up}"></span>
     </a>
     <a th:href="@{/}" class="btn2">
-    <i class="fa-solid fa-house"></i>
-    <span>Home</span>
+      <i class="fa-solid fa-house"></i>
+      <span th:text="#{common.index}"></span>
     </a>
   </div>
+
 </section>
 
 <script th:src="@{/js/login.js}"></script>
