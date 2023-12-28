@@ -9,7 +9,7 @@
 <section class="login">
   <h1 class="title">註冊會員</h1>
   <div class="container">
-    <form>
+    <form th:action="@{/create_account}" method="post">
       <div class="blank">
         <label class="label" for="account"></label>
         <input

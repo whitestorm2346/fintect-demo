@@ -13,20 +13,15 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "user_info")
+@Table(name = "Notes")
 public class Note {
     @Id
-    @Column(name = "user_id")
-    private String userId;
-    @Column(name = "user_name")
-    private String userName;
-    @Column(name = "password")
-    @JsonIgnore
-    private String password;
-    @Column(name = "email")
-    private String email;
-    @Column(name="role_id")
-    private String roleId;
-    @Column(name="enabled")
-    private String enabled;
+    @Column(name = "Note_Name")
+    private String noteName;
+
+    @Column(name = "Link")
+    private String noteLink;
+
+    @Column(name = "Type")
+    private String noteType;
 }

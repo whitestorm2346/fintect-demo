@@ -92,6 +92,7 @@ public class SecurityConfiguration {
     @Bean
     public UserDetailsServiceImpl userDetailsService() {
         UserDetailsServiceImpl userDetailsService = new UserDetailsServiceImpl();
+        userDetailsService.setPasswordEncoder(bCryptPasswordEncoder());
         return userDetailsService;
     }
 
