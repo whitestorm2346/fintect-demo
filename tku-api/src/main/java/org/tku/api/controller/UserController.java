@@ -1,6 +1,7 @@
 package org.tku.api.controller;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,11 +20,31 @@ import java.util.Optional;
 public class UserController {
 
     private final UserRepository userRepository;
+
+
     private final PasswordEncoder passwordEncoder;
 
     public UserController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+    }
+
+    public boolean isAccountExists(String account) {
+        log.debug("account: {}", account);
+
+        Optional<User> user = userRepository.findById(account);
+
+        return user.isPresent();
+    }
+
+    public void createUser(String account, String password){
+        User user = new User();
+        user.setAccount(account);
+        // 在实际应用中，密码通常应该进行加密处理，以下示例中简化为直接存储明文密码
+        user.setPassword(password);
+
+        // 保存用户到数据库
+        userRepository.save(user);
     }
 
     @GetMapping("/api/v1/allUser")
