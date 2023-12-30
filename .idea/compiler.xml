@@ -9,9 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tku-database" />
         <module name="tku-web" />
-        <module name="tku-api" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="tku-api" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

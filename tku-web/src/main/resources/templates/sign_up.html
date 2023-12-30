@@ -9,7 +9,7 @@
 <section class="login">
   <h1 class="title">註冊會員</h1>
   <div class="container">
-    <form th:action="@{/create-account}" method="post">
+    <form th:action="@{/create-account}" method="post" th:object="${signUpForm}">
       <div class="blank">
         <label class="label" for="account"></label>
         <input
@@ -17,6 +17,7 @@
             name="account"
             id="account"
             th:placeholder="#{label.login.account}"
+            th:field="*{account}"
             required
         />
       </div>
@@ -27,6 +28,7 @@
             name="new password"
             id="new-password"
             th:placeholder="#{label.login.new_password}"
+            th:field="*{newPassword}"
             required
         />
         <i class="eyes fa-solid fa-eye show-pw" id="show-pw-1"></i>
@@ -39,6 +41,7 @@
             name="check password"
             id="check-password"
             th:placeholder="#{label.login.check_password}"
+            th:field="*{checkPassword}"
             required
         />
         <i class="eyes fa-solid fa-eye show-pw" id="show-pw-2"></i>

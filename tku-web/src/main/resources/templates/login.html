@@ -9,7 +9,7 @@
 <section class="login">
   <h1 class="title">帳戶登入</h1>
   <div class="container">
-    <form th:action="@{/login}" method="post">
+    <form th:action="@{/login}" method="post" th:object="${loginForm}">
       <div class="blank">
         <label class="label" for="account"></label>
         <input
@@ -17,6 +17,7 @@
             name="account"
             id="account"
             th:placeholder="#{label.login.account}"
+            th:field="*{account}"
             required
         />
       </div>
@@ -27,6 +28,7 @@
             name="password"
             id="password"
             th:placeholder="#{label.login.password}"
+            th:field="*{password}"
             required
         />
         <i class="eyes fa-solid fa-eye show-pw" id="show-pw"></i>

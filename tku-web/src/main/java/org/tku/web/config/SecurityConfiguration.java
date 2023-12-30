@@ -34,8 +34,8 @@ public class SecurityConfiguration {
 
         http.formLogin(httpSecurityFormLoginConfigurer -> {
             httpSecurityFormLoginConfigurer.loginPage("/login")
-                    .defaultSuccessUrl("/web/index")
-                    .usernameParameter("userId")
+                    .defaultSuccessUrl("/index")
+                    .usernameParameter("account")
                     .passwordParameter("password").failureHandler((request, response, exception)->{
                         log.error("密碼錯誤");
                         response.sendRedirect("/login?error=failed");
@@ -44,7 +44,7 @@ public class SecurityConfiguration {
 
         http.authorizeHttpRequests(registry -> {
             // 定義哪些URL需要被保護、哪些不需要被保護
-            registry.requestMatchers("/web/**").authenticated()
+            registry.requestMatchers("/notes-share/**").authenticated()
                     .anyRequest().permitAll();
 
         });
