@@ -16,7 +16,7 @@ import lombok.ToString;
 @Table(name = "member")
 public class User {
     @Id
-    @Column(name = "Account")
+    @Column(name = "account")
     private String account;
 
     @Column(name = "password")
