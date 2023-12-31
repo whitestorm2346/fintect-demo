@@ -9,16 +9,16 @@
 
   <div class="container">
     <!-- 使用Thymeleaf条件判断，只有在publicNotes非空时才显示<h1>标签 -->
-    <h1 th:if="${not #lists.isEmpty(exercises)}">Public Exercises</h1>
+    <h1 th:if="${not #lists.isEmpty(publicExercises)}">Public Exercises</h1>
 
     <!-- 使用Thymeleaf条件判断，当publicNotes为空时显示提示信息 -->
-    <div th:if="${#lists.isEmpty(exercises)}">
+    <div th:if="${#lists.isEmpty(publicExercises)}">
       <p>No public exercise available.</p>
     </div>
 
-    <ul th:if="${not #lists.isEmpty(exercises)}">
+    <ul th:if="${not #lists.isEmpty(publicExercises)}">
       <!-- 使用Thymeleaf表达式遍历publicNotes列表 -->
-      <li th:each="exercise : ${exercises}">
+      <li th:each="exercise : ${publicExercises}">
         <!-- 显示note的其他属性 -->
         <a class="card ${exercise.noteType}" th:href="${exercise.noteLink}">
           <p th:text="${exercise.noteName}"></p>

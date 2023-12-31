@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface NoteRepository extends JpaRepository<Note, String> {
-    List<Note> findByType(String type);
-    List<Note> findByAccess(Integer access);
-    List<Note> findByTypeAndAccess(String type, int access);
+    List<Note> findByNoteTypeAndAccess(String noteType, Integer access);
 }
