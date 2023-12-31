@@ -13,23 +13,23 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Log4j2
 public class SecurityConfiguration {
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.formLogin(httpSecurityFormLoginConfigurer -> {
-            httpSecurityFormLoginConfigurer.loginPage("/login")
-                    .defaultSuccessUrl("/web/index")
-                    .usernameParameter("userId")
+            httpSecurityFormLoginConfigurer.loginPage("/login-test")
+                    .defaultSuccessUrl("/index")
+                    .usernameParameter("account")
                     .passwordParameter("password").failureHandler((request, response, exception)->{
                         log.error("密碼錯誤");
+                        //log.debug("account = {}, password = {}", );
                         response.sendRedirect("/login?error=failed");
                     });
         });
 
         http.authorizeHttpRequests(registry -> {
             // 定義哪些URL需要被保護、哪些不需要被保護
-            registry.requestMatchers("/web/**").authenticated()
+            registry.requestMatchers("/note-share/privates/**").authenticated()
                     .anyRequest().permitAll();
 
         });

@@ -27,5 +27,19 @@
         </li>
       </ul>
     </div>
+
+    <div class="container" th:if="${not #lists.isEmpty(privateNotes)}">
+      <!-- 使用Thymeleaf条件判断，只有在publicNotes非空时才显示<h1>标签 -->
+      <h1>Private Notes</h1>
+
+      <ul>
+        <li th:each="note : ${privateNotes}">
+          <!-- 显示note的其他属性 -->
+          <a class="card private ${note.noteType}" th:href="${note.noteLink}">
+            <p th:text="${note.noteName}"></p>
+          </a>
+        </li>
+      </ul>
+    </div>
 </body>
 </html>

@@ -36,4 +36,28 @@ public class NoteController {
         model.addAttribute("publicExercises", exercises);
         return "exercises";
     }
+
+    @GetMapping(value = "/private/notes")
+    public String NotesPrivatePage(Model model) throws JsonProcessingException {
+        List<Note> notes = noteRepository.findByNoteTypeAndAccess("Note", 0);
+        log.debug("{}", notes);
+        model.addAttribute("publicNotes", notes);
+
+        List<Note> private_notes = noteRepository.findByNoteTypeAndAccess("Note", 1);
+        log.debug("{}", private_notes);
+        model.addAttribute("privateNotes", private_notes);
+        return "notes";
+    }
+
+    @GetMapping(value = "/private/exercises")
+    public String ExercisesPrivatePage(Model model) throws JsonProcessingException {
+        List<Note> exercises = noteRepository.findByNoteTypeAndAccess("Exercise", 0);
+        log.debug("{}", exercises);
+        model.addAttribute("publicExercises", exercises);
+
+        List<Note> privtae_exercises = noteRepository.findByNoteTypeAndAccess("Exercise", 1);
+        log.debug("{}", privtae_exercises);
+        model.addAttribute("privateExercises", privtae_exercises);
+        return "exercises";
+    }
 }

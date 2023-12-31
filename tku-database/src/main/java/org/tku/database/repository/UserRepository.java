@@ -6,4 +6,5 @@ import org.tku.database.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
+    User findByAccount(String account);
 }

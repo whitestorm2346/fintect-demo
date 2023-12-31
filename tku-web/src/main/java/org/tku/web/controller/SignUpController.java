@@ -3,6 +3,7 @@ package org.tku.web.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,8 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.LocaleResolver;
 import org.tku.database.entity.User;
 import org.tku.database.repository.UserRepository;
+import org.tku.web.entity.LoginForm;
 import org.tku.web.entity.SignUpForm;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Controller

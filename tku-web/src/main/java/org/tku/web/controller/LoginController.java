@@ -6,6 +6,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,6 +66,12 @@ public class LoginController {
         }
 
         log.debug("Login Successfully");
+
+        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+                user, // principal
+                null, // credentials
+                AuthorityUtils.createAuthorityList("ROLE_USER")); // authorities
+        SecurityContextHolder.getContext().setAuthentication(auth);
 
         return "redirect:/index";
     }
