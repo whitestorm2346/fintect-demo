@@ -58,7 +58,9 @@ public class SignUpController {
         User user = new User();
 
         user.setAccount(signUpForm.getAccount());
+        log.debug("before encoding: {}", signUpForm.getNewPassword());
         user.setPassword(passwordEncoder.encode(signUpForm.getNewPassword()));
+        log.debug("after encoding: {}", user.getPassword());
 
         userRepository.save(user);
 

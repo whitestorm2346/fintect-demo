@@ -13,18 +13,18 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "Notes")
+@Table(name = "notes")
 public class Note {
     @Id
-    @Column(name = "Note_Name")
+    @Column(name = "name")
     private String noteName;
 
-    @Column(name = "Link")
+    @Column(name = "link")
     private String noteLink;
 
-    @Column(name = "Type")
+    @Column(name = "type")
     private String noteType;
 
-    @Column(name = "Access")
+    @Column(name = "access")
     private Integer access;
 }

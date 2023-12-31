@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <title>Exercises</title>
   <link rel="stylesheet" th:href="@{/css/nav.css}">
+  <link rel="stylesheet" th:href="@{/css/note.css}">
 </head>
 <body>
   <th:block th:include="common/nav :: nav"></th:block>
@@ -12,15 +13,15 @@
     <h1 th:if="${not #lists.isEmpty(publicExercises)}">Public Exercises</h1>
 
     <!-- 使用Thymeleaf条件判断，当publicNotes为空时显示提示信息 -->
-    <div th:if="${#lists.isEmpty(publicExercises)}">
-      <p>No public exercise available.</p>
-    </div>
+    <h1 th:if="${#lists.isEmpty(publicExercises)}">
+      No public exercise available.
+    </h1>
 
     <ul th:if="${not #lists.isEmpty(publicExercises)}">
       <!-- 使用Thymeleaf表达式遍历publicNotes列表 -->
       <li th:each="exercise : ${publicExercises}">
         <!-- 显示note的其他属性 -->
-        <a class="card ${exercise.noteType}" th:href="${exercise.noteLink}">
+        <a class="card public ${exercise.noteType}" th:href="${exercise.noteLink}">
           <p th:text="${exercise.noteName}"></p>
         </a>
       </li>
