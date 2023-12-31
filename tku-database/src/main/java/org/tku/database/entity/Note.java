@@ -24,4 +24,7 @@ public class Note {
 
     @Column(name = "Type")
     private String noteType;
+
+    @Column(name = "Access")
+    private Integer access;
 }
